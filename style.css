@@ -1,38 +1,45 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
-
-
-body {
-	margin: 0;
-	padding: 30px;
-	font-family:  'Alice', serif;
-	font-size: 18px;
-	line-height: 1.5;
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
-h1, h2, h3 {
-	font-family: 'Kaushan Script', cursive;
-	font-weight: normal;
-	margin: 0;
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Alice", serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Kaushan Script", cursive;
+  font-weight: normal;
+  margin: 0;
 }
 
 blockquote {
-	font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 /* --------------------------------------------------- */
 
 /* barvy */
 :root {
-	--svetla: #edf3f5;
-	--seda: #b2bec3;
-	--tmava: #636e72;
-	--oranzova: #ee5a24;
-	--cervena: #ea2027;
-	--zluta: #f79f1f;
-	--zelena: #a3cb38;
-	--limetka: #c4e538;
+  --svetla: #edf3f5;
+  --seda: #b2bec3;
+  --tmava: #636e72;
+  --oranzova: #ee5a24;
+  --cervena: #ea2027;
+  --zluta: #f79f1f;
+  --zelena: #a3cb38;
+  --limetka: #c4e538;
 }
 
 /*
@@ -65,4 +72,119 @@ blockquote {
 	- https://css-tricks.com/patterns-for-practical-css-custom-properties-use/
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
+/*------------------Grid----------------------*/
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  grid-column-gap: 40px;
+  max-width: 1211px; /* Aby šířka byla stejná jako v ukázce výsledku*/
+  margin: 0 auto;
+}
 
+h1,
+h2,
+p,
+header,
+footer {
+  grid-column: 2;
+}
+
+figure,
+blockquote {
+  grid-column: 1/-1;
+}
+.tip-vlevo {
+  grid-column: 1;
+}
+.tip-vpravo {
+  grid-column: 3;
+}
+
+/*--------------Konec gridu-------------------*/
+h1,
+h2 {
+  color: var(--zelena);
+}
+h1 {
+  margin-bottom: 50px;
+  font-size: 90px;
+}
+h2 {
+  margin-top: 40px;
+  font-size: 60px;
+  text-align: left;
+}
+p {
+  margin-bottom: 0;
+}
+
+.meta {
+  margin: 0;
+  color: var(--seda);
+}
+
+.tip {
+  background-color: var(--svetla);
+  color: var(--tmava);
+  font-size: 14px;
+}
+.tip a {
+  color: var(--oranzova);
+}
+
+.tip-vlevo {
+  border-right: 2px solid var(--zluta);
+  align-self: center;
+  text-align: right;
+}
+.tip-vlevo p {
+  margin: 0;
+  padding: 20px 25px 20px 30px;
+}
+
+.tip-vlevo img {
+  display: block;
+  padding: 18px 18px 0 18px;
+}
+figure {
+  margin: 50px 0 25px 0;
+}
+img {
+  max-width: 100%;
+}
+figcaption {
+  color: var(--seda);
+}
+blockquote {
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 35px;
+  color: var(--seda);
+}
+blockquote::before,
+blockquote::after {
+  content: "";
+  display: block;
+  margin: 20px 500px 20px;
+  width: 100px;
+  height: 2px;
+  background-color: var(--limetka);
+}
+
+.tip-vpravo {
+  border-left: 2px solid var(--zluta);
+  align-self: center;
+  text-align: left;
+}
+.tip-vpravo p {
+  margin: 0;
+  padding: 20px 30px 20px 25px;
+}
+
+footer,
+footer a {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--seda);
+}
