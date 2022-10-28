@@ -166,7 +166,9 @@ blockquote::before,
 blockquote::after {
   content: "";
   display: block;
-  margin: 20px 500px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 100px;
   height: 2px;
   background-color: var(--limetka);
